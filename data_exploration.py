@@ -57,10 +57,6 @@ crime_dict = {
     'NON-CRIMINAL':['NON-CRIMINAL']
     }
 
-
-
-
-
 # get list of categories of crimes
 crime_values = []
 for i in range(len(crime_dict.keys())):
@@ -68,17 +64,14 @@ for i in range(len(crime_dict.keys())):
 print(crime_values) 
 print(len(crime_values))
 
-
 # Crime dictionary inverse
 crime_dict_inv={}
 for key in list(crime_dict.keys()):
     for value in crime_dict[key]:
         crime_dict_inv[value]=key
 
-
 # add column to data frame
 train_df['agg_Category'] = train_df['Category'].map(crime_dict_inv)
-
 
 
 
