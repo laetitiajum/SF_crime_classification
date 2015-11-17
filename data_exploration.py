@@ -69,18 +69,16 @@ print(crime_values)
 print(len(crime_values))
 
 
-agg_Category = []
-for i in range(nrow):
-    if train.Category[i] not in crime_values:
-        agg_Category.append('OTHER')
-    else:
-        for key in list(crime_dict.keys()):
-            if train.Category[i] in crime_dict[key]:
-                agg_Category.append(key)
-    
+# Crime dictionary inverse
+crime_dict_inv={}
+for key in list(crime_dict.keys()):
+    for value in crime_dict[key]:
+        crime_dict_inv[value]=key
+
 
 # add column to data frame
-train['agg_Category'] = agg_Category
+train_df['agg_Category'] = train_df['Category'].map(crime_dict_inv)
+
 
 
 
