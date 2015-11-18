@@ -16,7 +16,7 @@ train_df=pd.read_csv("train.csv")
 
 train_df.head()
 
-## Code by Marie-Laura
+## Dictionary by Marie-Laura 
 # aggregate crimes into several categories : it is an arbitrary choice but still very useful
 crime_dict = {
     'THEFT':['LARCENY/THEFT','VEHICLE THEFT','STOLEN PROPERTY','RECOVERED VEHICLE'],
